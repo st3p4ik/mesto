@@ -1,0 +1,12 @@
+.profile{
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width:1024px) {
+  .profile{
+    min-width: 1024px;
+  flex-direction: row;
+}
+}
