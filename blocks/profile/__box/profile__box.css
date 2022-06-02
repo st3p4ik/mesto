@@ -1,15 +1,16 @@
 .profile__box {
-  margin: 0 auto;
+  margin: 0 0 0 35px;
   display: grid;
-  grid-template-columns: 190px 18px;
+  grid-template-columns: auto 18px;
   column-gap: 10px;
   row-gap: 14px;
 }
 
 @media screen and (min-width:1024px) {
   .profile__box {
-    grid-template-columns: 294px 18px;
+    grid-template-columns: auto 24px;
     column-gap: 18px;
     row-gap: 16px;
+    margin: 0 0 0 30px;
   }
 }

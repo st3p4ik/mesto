@@ -2,21 +2,25 @@
   grid-column: 1;
   grid-row: 2;
   color: white;
-  max-width: 170px;
-  margin: 0 auto 36px;
+  max-width: 213px;
+  margin: 0 0 36px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @media screen and (min-width:1024px) {
   .profile__subtitle {
-    max-width: 294px;
+    max-width: 320px;
     font-size: 18px;
     line-height: 22px;
-
+    margin: 0;
+    text-align: left;
   }
 }

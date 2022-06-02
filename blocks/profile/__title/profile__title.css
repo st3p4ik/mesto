@@ -2,7 +2,7 @@
   grid-column: 1;
   grid-row: 1;
   max-width: 190px;
-  margin: 0 auto;
+  margin: 0;
   color: white;
   font-family: 'Inter';
   font-style: normal;
@@ -10,6 +10,9 @@
   font-size: 27px;
   line-height: 33px;
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @media screen and (min-width:1024px) {
@@ -17,5 +20,6 @@
     max-width: 294px;
     font-size: 42px;
     line-height: 48px;
+    text-align: left;
   }
 }
