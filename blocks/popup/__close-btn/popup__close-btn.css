@@ -1,0 +1,16 @@
+.popup__close-btn {
+  align-self: flex-end;
+  background: url(../../../images/Close\ Icon.svg) no-repeat;
+  background-position: 50%;
+  background-size: 20px 20px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  height: 20px;
+  opacity: 1;
+  padding: 0;
+  position: absolute;
+  top: -36px;
+  transition: opacity .25s linear;
+  width: 20px;
+}
