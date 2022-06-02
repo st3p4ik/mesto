@@ -1,4 +1,4 @@
-.profile__subtitle {
+.profile__status {
   grid-column: 1;
   grid-row: 2;
   color: white;
@@ -16,7 +16,7 @@
 }
 
 @media screen and (min-width:1024px) {
-  .profile__subtitle {
+  .profile__status {
     max-width: 320px;
     font-size: 18px;
     line-height: 22px;
