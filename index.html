@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mesto</title>
+  <title>май Mesto</title>
   <link rel="stylesheet" href="./pages/index.css">
 </head>
 
@@ -17,10 +17,10 @@
       <img class="profile__image" src="./images/profile-image.jpg" alt="изображение профиля">
       <div class="profile__box">
         <h1 class="profile__name">Жак-Ив Кусто</h1>
-        <button type="button" class="profile__edit-button"></button>
+        <button type="button" class="profile__edit-btn"></button>
         <p class="profile__status">Исследователь океана</p>
       </div>
-      <button type="button" class="profile__add-button"></button>
+      <button type="button" class="profile__add-btn"></button>
     </section>
     <section class="cards">
       <article class="card">
@@ -75,9 +75,9 @@
       <button type="button" class="popup__close-btn"></button>
       <p class="popup__title">Редактировать профиль</p>
       <form class="popup__form" id="form-edit-profile">
-        <input type="text">
-        <input type="text">
-        <button></button>
+        <input id="nameInput" class="popup__input" placeholder="Имя" value="Жак-Ив Кусто" type="text" required>
+        <input id="statusInput" class="popup__input" placeholder="Статус" value="Исследователь океана" type="text" required>
+        <button aria-label="Сохранить" class="popup__submit-btn" type="submit" >Сохранить</button>
       </form>
     </div>
   </div>
