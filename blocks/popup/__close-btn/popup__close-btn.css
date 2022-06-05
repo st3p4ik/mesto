@@ -3,6 +3,7 @@
   background: url(../../../images/CloseIcon.svg) no-repeat;
   background-position: 50%;
   background-size: 20px 20px;
+  background-color: transparent;
   border: none;
   cursor: pointer;
   display: flex;
