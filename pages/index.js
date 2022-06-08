@@ -9,9 +9,9 @@ let profileStatus = document.querySelector('.profile__status');
 
 
 function openPopup() {
-  popup.classList.add('popup_active');
   nameInput.value = profileName.textContent;
   statusInput.value = profileStatus.textContent;
+  popup.classList.add('popup_active');
 }
 
 
@@ -22,10 +22,8 @@ function closePopup(){
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
-  let name = nameInput.value;
-  profileName.textContent = name;
-  let status = statusInput.value;
-  profileStatus.textContent = status;
+  profileName.textContent = nameInput.value;
+  profileStatus.textContent = statusInput.value;
   closePopup();
 }
 
