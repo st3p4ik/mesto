@@ -36,7 +36,7 @@ function closePopup(popup) {
 
 //edit profile
 let editBtn = document.querySelector('.profile__edit-btn');
-let profilePopup = document.querySelector('.popup__edit-profile');
+let profilePopup = document.querySelector('.popup_type_edit-profile');
 let closeBtn = document.querySelector('.popup__close-btn');
 let formElement = profilePopup.querySelector('.popup__form');
 let nameInput = profilePopup.querySelector('.popup__input_type_name');
@@ -69,14 +69,14 @@ formElement.addEventListener('submit', formSubmitHandler);
 
 //new card popup
 
-let addCardPopup = document.querySelector('.popup__add-card');
+let addCardPopup = document.querySelector('.popup_type_add-card');
 let addFormElement = addCardPopup.querySelector('.popup__container');
 let addCardCloseBtn = addCardPopup.querySelector('.popup__close-btn');
 let placeInput = addCardPopup.querySelector('.popup__input_type_place');
 let urlInput = addCardPopup.querySelector('.popup__input_type_url');
 let addBtn = document.querySelector('.profile__add-btn');
 
-let imagePopup = document.querySelector('.popup__full-image');
+let imagePopup = document.querySelector('.popup_type_full-image');
 let fullImage = imagePopup.querySelector('.popup__image');
 let fullImageStatus = imagePopup.querySelector('.popup__image-status');
 let fullImageCloseBtn = imagePopup.querySelector('.popup__close-btn');
