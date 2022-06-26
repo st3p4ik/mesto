@@ -118,6 +118,13 @@ function createNewCard(Place, Url) {
     cardLikeBtn.classList.toggle('card__like-btn_active');
   });
 
+  //card delete
+
+  let cardRemoveBtn = newCard.querySelector('.card__remove-btn');
+  cardRemoveBtn.addEventListener('click', function (event) {
+    const parent = event.target.parentElement;
+    parent.remove();
+});
 
   return newCard;
 }
