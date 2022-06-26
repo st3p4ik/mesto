@@ -1,3 +1,32 @@
+const initialCards = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
+];
+
+const cardsList = document.querySelector('.cards');
+
 function openPopup(popup) {
   popup.classList.add('popup_active');
 }
@@ -32,9 +61,9 @@ function formSubmitHandler(evt) {
 
 editBtn.addEventListener('click', openProfilePopup);
 
-closeBtn.addEventListener('click', function (e){
+closeBtn.addEventListener('click', function (e) {
   closePopup(profilePopup);
-}); 
+});
 
 formElement.addEventListener('submit', formSubmitHandler);
 
@@ -46,29 +75,53 @@ let addCardCloseBtn = addCardPopup.querySelector('.popup__close-btn');
 let placeInput = addCardPopup.querySelector('.popup__input_type_place');
 let urlInput = addCardPopup.querySelector('.popup__input_type_url');
 let addBtn = document.querySelector('.profile__add-btn');
-let cardsList = document.querySelector('.cards');
 
-function openAddCardPopup(){
+
+function openAddCardPopup() {
   openPopup(addCardPopup);
   placeInput.value = '';
   urlInput.value = '';
 }
 
-function closeAddCardPopup(){
+function closeAddCardPopup() {
   addCardPopup.classList.remove('popup_active');
 }
 
 function addCardFormSubmitHandler(evt) {
   evt.preventDefault();
-  cardsList.prepend(createCard(placeInput.value, urlInput.value));
+  cardsList.prepend(createNewCard(placeInput.value, urlInput.value));
   closePopup(addCardPopup);
 }
 
 addBtn.addEventListener('click', openAddCardPopup);
 
-addCardCloseBtn.addEventListener('click', function(e) {
-closePopup(addCardPopup);
+addCardCloseBtn.addEventListener('click', function (e) {
+  closePopup(addCardPopup);
 });
 
-addFormElement.addEventListener('submit', addFormElementSubmitHandler);
+addFormElement.addEventListener('submit', addCardFormSubmitHandler);
 
+//new card
+
+let elementTemplate = document.querySelector('.card_template').content;
+
+function createNewCard(Place, Url) {
+  let newCard = elementTemplate.querySelector('.card').cloneNode(true);
+  newCard.querySelector('.card__image').src = Url;
+  newCard.querySelector('.card__title').textContent = Place;
+  newCard.querySelector('.card__image').alt = Place;
+
+  //card like
+
+  let cardLikeBtn = newCard.querySelector('.card__like-btn');
+  cardLikeBtn.addEventListener('click', function () {
+    cardLikeBtn.classList.toggle('card__like-btn_active');
+  });
+
+
+  return newCard;
+}
+
+for (let i = 0; i < initialCards.length; i++) {
+  cardsList.append(createNewCard(initialCards[i].name, initialCards[i].link));
+}
