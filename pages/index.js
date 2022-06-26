@@ -76,6 +76,15 @@ let placeInput = addCardPopup.querySelector('.popup__input_type_place');
 let urlInput = addCardPopup.querySelector('.popup__input_type_url');
 let addBtn = document.querySelector('.profile__add-btn');
 
+let imagePopup = document.querySelector('.popup__full-image');
+let fullImage = imagePopup.querySelector('.popup__image');
+let fullImageStatus = imagePopup.querySelector('.popup__image-status');
+let fullImageCloseBtn = imagePopup.querySelector('.popup__close-btn');
+
+fullImageCloseBtn.addEventListener('click', function () {
+  closePopup(imagePopup);
+});
+
 
 function openAddCardPopup() {
   openPopup(addCardPopup);
@@ -124,7 +133,15 @@ function createNewCard(Place, Url) {
   cardRemoveBtn.addEventListener('click', function (event) {
     const parent = event.target.parentElement;
     parent.remove();
-});
+  });
+
+  const smallImage = newCard.querySelector('.card__image');
+  smallImage.addEventListener('click', function () {
+    fullImage.src = Url;
+    fullImage.alt = "Фотография «" + Place + "»";
+    fullImageStatus.textContent = Place;
+    openPopup(imagePopup);
+  })
 
   return newCard;
 }
