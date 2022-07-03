@@ -1,3 +1,10 @@
+const validationConfig = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__submit-btn",
+  inactiveButtonClass: "button_disable",
+};
+
 const cardsList = document.querySelector('.cards');
 
 function openPopup(popup) {
@@ -115,7 +122,31 @@ function createNewCard(Place, Url) {
   return newCard;
 }
 
-
 initialCards.forEach(function (item) {
   cardsList.append(createNewCard(item.name, item.link));
   });
+
+  // popup's other functions
+
+  const closePopupByClick = (e) => {
+    popupElement = document.querySelector('.popup_active');
+    if (e.target === e.currentTarget) {
+        closePopup(popupElement);
+    }
+}
+const closePopupByEsc = (e) => {
+    popupElement = document.querySelector('.popup_active');
+    if (e.code === "Escape") {
+        closePopup(popupElement);
+    }
+}
+function openPopup(popupElement) {
+    popupElement.classList.add('popup_active');
+    popupElement.addEventListener('click', closePopupByClick); 
+    document.addEventListener('keydown', closePopupByEsc);
+}
+function closePopup(popupElement) {
+    popupElement.classList.remove('popup_active');
+    popupElement.removeEventListener('click', closePopupByClick);
+    document.removeEventListener('keydown', closePopupByEsc);
+}
