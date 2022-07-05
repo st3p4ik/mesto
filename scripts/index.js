@@ -122,7 +122,7 @@ initialCards.forEach(function (item) {
 // popup's other functions
 
 const closePopupByClick = (e) => {
-  popupElement = document.querySelector(".popup_active");
+  popupElement = e.target;
   if (e.target === e.currentTarget) {
     closePopup(popupElement);
   }
