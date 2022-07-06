@@ -17,8 +17,10 @@ const statusInput = profilePopup.querySelector(".popup__input_type_status");
 const profileName = document.querySelector(".profile__name");
 const profileStatus = document.querySelector(".profile__status");
 
+
 function openProfilePopup() {
   openPopup(profilePopup);
+  enableButton(formEditProfile.submit, validationConfig);
   nameInput.value = profileName.textContent;
   statusInput.value = profileStatus.textContent;
 }
@@ -41,6 +43,7 @@ formEditProfile.addEventListener("submit", submitEditProfileForm);
 //new card popup
 
 const newCardPopup = document.querySelector(".popup_type_add-card");
+const newCardForm = newCardPopup.querySelector(".popup__form");
 const newFormElement = newCardPopup.querySelector(".popup__container");
 const newCardCloseBtn = newCardPopup.querySelector(".popup__close-btn");
 const placeInput = newCardPopup.querySelector(".popup__input_type_place");
@@ -59,9 +62,8 @@ fullImageCloseBtn.addEventListener("click", function () {
 
 function openAddCardPopup() {
   openPopup(newCardPopup);
-  placeInput.value = "";
-  urlInput.value = "";
-  disableButton(newCardSubmitButton);
+  newCardForm.reset();
+  disableButton(newCardSubmitButton, validationConfig);
 }
 
 function addCardFormSubmitHandler(evt) {

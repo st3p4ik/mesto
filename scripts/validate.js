@@ -24,21 +24,21 @@ const showInputError = (formElement, inputElement, errorMessage, validationConfi
     });
   };
 
-  const disableButton = (buttonElement) => {
+  const disableButton = (buttonElement,validationConfig) => {
     buttonElement.classList.add(validationConfig.inactiveButtonClass);
     buttonElement.disabled = true;
 }
 
-const enableButton = (buttonElement) => {
+const enableButton = (buttonElement,validationConfig) => {
     buttonElement.classList.remove(validationConfig.inactiveButtonClass);
     buttonElement.disabled = false;
 }
 
 const toggleButtonState = (inputList, buttonElement, validationConfig) => {
     if (hasInvalidInput(inputList)) {
-      disableButton(buttonElement);
+      disableButton(buttonElement,validationConfig);
     } else {
-      enableButton(buttonElement);
+      enableButton(buttonElement,validationConfig);
     }
   };
   
